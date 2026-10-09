@@ -1,3 +1,4 @@
+// The mark stays split into paths so every piece can move independently.
 const FxCupIcon = ({ className = "" }) => (
   <svg className={className} viewBox="0 0 155.4 51.2" role="img" aria-label="FXCup">
     <defs>
@@ -20,8 +21,11 @@ function Loader() {
   return (
     <div className="loader" aria-label="Loading FXCup">
       <div className="loader__arena">
+        {/* The title and line introduce the brand before the trophy is drawn. */}
         <div className="loader__name">FXCUP</div>
         <div className="loader__line" />
+
+        {/* Separate paths let the bowl, handles, stem, and base draw in sequence. */}
         <svg className="loader__trophy" viewBox="0 0 220 190" aria-hidden="true">
           <defs>
             <linearGradient id="trophy-gradient" x1="25" y1="20" x2="190" y2="175" gradientUnits="userSpaceOnUse">
@@ -36,6 +40,8 @@ function Loader() {
           <path className="trophy-part trophy-part--base" d="M68 168h84" />
           <path className="trophy-shine" d="m78 35 12 50M132 35l-8 24" />
         </svg>
+
+        {/* The clip mask in CSS keeps the animated mark inside the trophy bowl. */}
         <FxCupIcon className="loader__cup" />
         <div className="loader__caption">MONTHLY TRADING CUP</div>
         <div className="loader__particles"><i /><i /><i /><i /></div>

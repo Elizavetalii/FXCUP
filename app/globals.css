@@ -240,6 +240,7 @@ main { min-height: 100vh; overflow: hidden; }
 .stat b { color: var(--blue); font-weight: 400; }
 
 .loader {
+  /* One duration controls every stage of the intro. */
   --loader-time: 2.7s;
   position: fixed;
   z-index: 100;
@@ -346,6 +347,7 @@ main { min-height: 100vh; overflow: hidden; }
   top: 64px;
   left: 103px;
   width: 82px;
+  /* The polygon follows the narrowing trophy bowl and prevents overflow. */
   clip-path: polygon(8% 0, 92% 0, 78% 100%, 22% 100%);
   height: auto;
   overflow: visible;
@@ -410,6 +412,7 @@ main { min-height: 100vh; overflow: hidden; }
 .cup-trail--one { animation: cupTrailOne var(--loader-time) ease both; }
 .cup-trail--two { animation: cupTrailTwo var(--loader-time) ease both; }
 
+/* Intro title -> trophy drawing -> logo assembly -> fade to black. */
 @keyframes cupName {
   0%, 7% { opacity: 0; filter: blur(8px); letter-spacing: .48em; transform: translate(.24em, 6px) scale(.94); }
   15%, 24% { opacity: 1; filter: blur(0); letter-spacing: .24em; transform: translateX(.12em) scale(1); }
