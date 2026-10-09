@@ -13,7 +13,7 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   color: var(--ink);
-  background: var(--paper);
+  background: #000;
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
@@ -21,6 +21,8 @@ body {
 a { color: inherit; text-decoration: none; }
 
 main { min-height: 100vh; overflow: hidden; }
+
+.black-screen { background: #000; }
 
 .site-header {
   height: 65px;
@@ -263,14 +265,14 @@ main { min-height: 100vh; overflow: hidden; }
 
 .loader__arena {
   position: relative;
-  width: 240px;
-  height: 220px;
+  width: 288px;
+  height: 255px;
 }
 
 .loader__name {
   position: absolute;
   z-index: 3;
-  top: 91px;
+  top: 106px;
   left: 0;
   width: 100%;
   text-align: center;
@@ -287,9 +289,9 @@ main { min-height: 100vh; overflow: hidden; }
 .loader__line {
   position: absolute;
   z-index: 3;
-  top: 127px;
-  left: 48px;
-  width: 144px;
+  top: 142px;
+  left: 64px;
+  width: 160px;
   height: 2px;
   overflow: hidden;
   transform: scaleX(0);
@@ -302,9 +304,9 @@ main { min-height: 100vh; overflow: hidden; }
 .loader__trophy {
   position: absolute;
   z-index: 1;
-  top: 4px;
-  left: 21px;
-  width: 198px;
+  top: 0;
+  left: 23px;
+  width: 242px;
   height: auto;
   overflow: visible;
 }
@@ -341,9 +343,10 @@ main { min-height: 100vh; overflow: hidden; }
 .loader__cup {
   position: absolute;
   z-index: 2;
-  top: 52px;
-  left: 74px;
-  width: 92px;
+  top: 64px;
+  left: 103px;
+  width: 82px;
+  clip-path: polygon(8% 0, 92% 0, 78% 100%, 22% 100%);
   height: auto;
   overflow: visible;
   opacity: 0;
@@ -354,7 +357,7 @@ main { min-height: 100vh; overflow: hidden; }
 .loader__caption {
   position: absolute;
   z-index: 2;
-  top: 193px;
+  top: 226px;
   left: 0;
   width: 100%;
   color: rgba(228,244,236,.82);
@@ -379,10 +382,10 @@ main { min-height: 100vh; overflow: hidden; }
   animation: cupParticle var(--loader-time) ease-out both;
 }
 
-.loader__particles i:nth-child(1) { top: 46px; left: 24px; --particle-x: -15px; --particle-y: -12px; }
-.loader__particles i:nth-child(2) { top: 30px; right: 35px; --particle-x: 13px; --particle-y: -18px; animation-delay: .04s; }
-.loader__particles i:nth-child(3) { top: 109px; left: 39px; --particle-x: -19px; --particle-y: 9px; animation-delay: .08s; }
-.loader__particles i:nth-child(4) { top: 101px; right: 27px; --particle-x: 17px; --particle-y: 12px; animation-delay: .12s; }
+.loader__particles i:nth-child(1) { top: 48px; left: 22px; --particle-x: -15px; --particle-y: -12px; }
+.loader__particles i:nth-child(2) { top: 30px; right: 30px; --particle-x: 13px; --particle-y: -18px; animation-delay: .04s; }
+.loader__particles i:nth-child(3) { top: 130px; left: 35px; --particle-x: -19px; --particle-y: 9px; animation-delay: .08s; }
+.loader__particles i:nth-child(4) { top: 122px; right: 24px; --particle-x: 17px; --particle-y: 12px; animation-delay: .12s; }
 
 .cup-piece {
   transform-box: fill-box;

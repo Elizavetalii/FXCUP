@@ -16,62 +16,13 @@ const FxCupIcon = ({ className = "" }) => (
   </svg>
 );
 
-const testimonials = [
-  {
-    name: "SOPHIE",
-    country: "United Kingdom",
-    initials: "S",
-    started: "€700",
-    current: "€1,466",
-    duration: "3 Weeks",
-    effort: "20 minutes",
-  },
-  {
-    name: "JOHANN",
-    country: "Germany",
-    initials: "J",
-    started: "€500",
-    current: "€1,850",
-    duration: "4 Weeks",
-    effort: "18 minutes",
-  },
-  {
-    name: "ELENA",
-    country: "Spain",
-    initials: "E",
-    started: "€650",
-    current: "€1,720",
-    duration: "4 Weeks",
-    effort: "15 minutes",
-  },
-];
-
-function Testimonial({ person }) {
-  return (
-    <article className="result-card">
-      <div className={`avatar avatar--${person.initials.toLowerCase()}`} aria-hidden="true">
-        <span>{person.initials}</span>
-      </div>
-      <div className="result-card__body">
-        <h3>{person.name}</h3>
-        <p className="country">{person.country}</p>
-        <div className="stat"><span>Started with:</span><b>{person.started}</b></div>
-        <div className="stat"><span>Currently has:</span><b>{person.current}</b></div>
-        <div className="stat"><span>Member for:</span><b>{person.duration}</b></div>
-        <div className="stat"><span>Daily effort:</span><b>{person.effort}</b></div>
-      </div>
-    </article>
-  );
-}
-
 function Loader() {
   return (
-    <div className="loader" aria-hidden="true">
+    <div className="loader" aria-label="Loading FXCup">
       <div className="loader__arena">
         <div className="loader__name">FXCUP</div>
         <div className="loader__line" />
-
-        <svg className="loader__trophy" viewBox="0 0 220 190">
+        <svg className="loader__trophy" viewBox="0 0 220 190" aria-hidden="true">
           <defs>
             <linearGradient id="trophy-gradient" x1="25" y1="20" x2="190" y2="175" gradientUnits="userSpaceOnUse">
               <stop stopColor="#00ff95" />
@@ -85,7 +36,6 @@ function Loader() {
           <path className="trophy-part trophy-part--base" d="M68 168h84" />
           <path className="trophy-shine" d="m78 35 12 50M132 35l-8 24" />
         </svg>
-
         <FxCupIcon className="loader__cup" />
         <div className="loader__caption">MONTHLY TRADING CUP</div>
         <div className="loader__particles"><i /><i /><i /><i /></div>
@@ -95,40 +45,5 @@ function Loader() {
 }
 
 export default function Home() {
-  return (
-    <main>
-      <Loader />
-
-      <header className="site-header">
-        <a className="brand-link" href="#top" aria-label="FXCup home">
-          <img className="fxcup-logo" src="/fxcup-logo.svg" alt="FXCup" />
-        </a>
-        <a className="signup" href="#community">Get Early Access</a>
-      </header>
-
-      <section className="hero" id="top">
-        <div className="hero__content">
-          <div className="eyebrow" />
-          <h1>BECOME A REAL DAY TRADER BY</h1>
-          <h2>COPYING PROFESSIONALS</h2>
-          <div className="video-preview" aria-label="Trading community video preview">
-            <span className="screen screen--one" />
-            <span className="screen screen--two" />
-            <span className="person-shape" />
-            <span className="play" />
-          </div>
-          <a className="join" href="#community">Join FXCup</a>
-        </div>
-      </section>
-
-      <section className="results" id="community">
-        <h2>PERSONAL RESULTS INSIDE<br />OUR COMMUNITY</h2>
-        <div className="results__viewport">
-          <div className="results__track">
-            {testimonials.map((person) => <Testimonial person={person} key={person.name} />)}
-          </div>
-        </div>
-      </section>
-    </main>
-  );
+  return <main className="black-screen"><Loader /></main>;
 }
