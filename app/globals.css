@@ -344,11 +344,9 @@ main { min-height: 100vh; overflow: hidden; }
 .loader__cup {
   position: absolute;
   z-index: 2;
-  top: 64px;
-  left: 103px;
-  width: 82px;
-  /* The polygon follows the narrowing trophy bowl and prevents overflow. */
-  clip-path: polygon(8% 0, 92% 0, 78% 100%, 22% 100%);
+  top: 61px;
+  left: 102px;
+  width: 92px;
   height: auto;
   overflow: visible;
   opacity: 0;

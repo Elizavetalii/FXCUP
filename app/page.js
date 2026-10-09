@@ -41,7 +41,7 @@ function Loader() {
           <path className="trophy-shine" d="m78 35 12 50M132 35l-8 24" />
         </svg>
 
-        {/* The clip mask in CSS keeps the animated mark inside the trophy bowl. */}
+        {/* The complete FX mark sits inside the bowl; its paths animate separately. */}
         <FxCupIcon className="loader__cup" />
         <div className="loader__caption">MONTHLY TRADING CUP</div>
         <div className="loader__particles"><i /><i /><i /><i /></div>
